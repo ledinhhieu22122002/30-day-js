@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="./main.css">
+    <title>Thử thách 3:</title>
+</head>
+
+<body>
+    <button class="open_modal_btn">Open Modal</button>
+    <div class="modal">
+        <div class="modal_inner">
+            <div class="modal_header">
+                <p>Welcome to Nodemy</p>
+                <i class="fas fa-times"></i>
+            </div>
+            <div class="modal_body">
+                <h2>Modal</h2>
+                <p>Đây là phần body của modal</p>
+            </div>
+            <div class="modal_footer">
+                <button>Close</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        window.onload = () => {
+            const $ = document.querySelector.bind(document);
+            const modal = $(".modal");
+            const modalinner = $(".modal_inner");
+            const openmodal = $(".open_modal_btn");
+            const iconmodal = $(".modal_header i");
+            const closemodal = $(".modal_footer button");
+            const showmodal = () => {
+                modal.classList.toggle("hide");
+            }
+            iconmodal.onclick = showmodal;
+            closemodal.onclick = showmodal;
+            openmodal.onclick = showmodal;
+            modal.onclick = (e) => {
+                if (e.target == e.currentTarget) showmodal();
+            }
+        };
+    </script>
+</body>
+
+</html>
